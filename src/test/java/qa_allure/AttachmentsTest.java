@@ -1,40 +1,37 @@
 package qa_allure;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Step;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.attachment;
+import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
-public class WebSteps {
+public class AttachmentsTest {
+    private static final String REPOSITORY = "eroshenkoam/allure-example";
+    private static final int ISSUE = 1;
 
-    @Step("Открываем главную страницу")
-    public void openMainPage() {
-        open("https://github.com");
+    @Test
+    public void testLambdaAttachments() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
+        step("Открываем главную страницу", () -> {
+            open("https://github.com");
+            attachment("Source", webdriver().driver().source());
+        });
     }
 
-    @Step("Ищем репозиторий {repo}")
-    public void searchForRepository(String repo) {
-        $(".header-search-button").click();
-        $("#query-builder-test").sendKeys(repo);
-        $("#query-builder-test").submit();
-    }
+    @Test
+    public void testAnnotatedAttachments() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+        WebSteps steps = new WebSteps();
 
-    @Step("Кликаем по ссылке репозитория {repo})")
-    public void clickRepositoryLink(String repo) {
-        $(linkText(repo));
+        steps.openMainPage();
+        steps.takeScreenshot();
     }
-
-    @Step("Открыываем таб Issues")
-    public void openIssuesTab(){
-        $("#_r_6_").click();
-    }
-
-    @Step("Проверяем наличие Issue с номером {issue}")
-    public void shouldSeeIssueWithNumber(int issue) {
-        $(withText("#" + issue)).should(Condition.exist);
-    }
-
 }
