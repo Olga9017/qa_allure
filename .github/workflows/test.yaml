@@ -17,4 +17,7 @@ jobs:
           java-version: '17'
       - uses: Xotabu4/selenoid-github-action@v2
     #запускаем тесты
+      - run: chmod +x ./gradlew
       - run: ./gradlew clean test -Dselenide.remote=https://your.selenoid.com:4444/wd/hub
+        env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
