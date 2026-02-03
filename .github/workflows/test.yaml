@@ -9,15 +9,13 @@ jobs:
     #что делаем
     steps:
     #выкачиваем репозиторий
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v3
     #настраиваем java
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: '17'
       - uses: Xotabu4/selenoid-github-action@v2
     #запускаем тесты
       - run: chmod +x ./gradlew
-      - run: ./gradlew clean test -Dselenide.remote=https://your.selenoid.com:4444/wd/hub
-        env:
-          JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.18-8/x64
+      - run: ./gradlew clean test -Dselenide.remote=http://localhost:4444/wd/hub
