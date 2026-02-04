@@ -9,17 +9,16 @@ jobs:
     #что делаем
     steps:
     #выкачиваем репозиторий
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v3
     #настраиваем java
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: '17'
       - uses: Xotabu4/selenoid-github-action@v2
     #запускаем тесты
       - run: chmod +x ./gradlew
-      - run: curl -s http://your.selenoid.host:4444/status
-      - run: ./gradlew clean test -Dselenide.remote=http://selenoid.your-company.com:4444/wd/hub
+      - run: ./gradlew clean test -Dselenide.remote=http://localhost:4444/wd/hub
       #скачиваем историю тестов
       - uses: actions/checkout@v2
         if: always()
