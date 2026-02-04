@@ -31,10 +31,10 @@ public class StepTest {
             $("#query-builder-test").sendKeys(REPOSITORY);
             $("#query-builder-test").submit();
         });
-        step("Кликаем по ссылке репозитория" + REPOSITORY, () -> {
-            $(linkText(REPOSITORY));
-        });
-        step("Открыываем таб Issues", () -> {
+//        step("Кликаем по ссылке репозитория" + REPOSITORY, () -> {
+//            $(linkText(REPOSITORY));
+//        });
+        step("Открыываем Issues", () -> {
             $("#_r_6_").click();
         });
         step("Проверяем наличие Issue с номером" + ISSUE, () -> {
@@ -49,7 +49,7 @@ public class StepTest {
 
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
-        steps.clickRepositoryLink(REPOSITORY);
+//        steps.clickRepositoryLink(REPOSITORY);
         steps.openIssuesTab();
         steps.shouldSeeIssueWithNumber(ISSUE);
     }

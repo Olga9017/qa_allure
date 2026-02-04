@@ -20,7 +20,7 @@ public class SelenideTest {
         $("#query-builder-test").sendKeys("eroshenkoam/allure-example");
         $("#query-builder-test").submit();
 
-        $(linkText("eroshenkoam/allure-example"));
+
         $("#_r_6_").click();
         $(withText("#1")).should(Condition.exist);
     }
