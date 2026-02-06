@@ -17,11 +17,11 @@ public class SelenideTest {
         open("https://github.com");
 
         $(".header-search-button").click();
-        $("#query-builder-test").sendKeys("eroshenkoam/allure-example");
+        $("#query-builder-test").sendKeys("Olga9017/qa_allure");
         $("#query-builder-test").submit();
 
-
-        $("#_r_6_").click();
+        $(linkText("Olga9017/qa_allure")).click();
+        $("#issues-tab").click();
         $(withText("#1")).should(Condition.exist);
     }
 }

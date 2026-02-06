@@ -28,12 +28,12 @@ public class WebSteps {
 
     @Step("Кликаем по ссылке репозитория {repo})")
     public void clickRepositoryLink(String repo) {
-        $(linkText(repo));
+        $(linkText(repo)).click();
     }
 
     @Step("Открыываем таб Issues")
     public void openIssuesTab(){
-        $("#_r_6_").click();
+        $("#issues-tab").click();
     }
 
     @Step("Проверяем наличие Issue с номером {issue}")

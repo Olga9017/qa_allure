@@ -14,7 +14,7 @@ import static org.openqa.selenium.By.linkText;
 
 public class StepTest {
 
-    private static final String REPOSITORY = "eroshenkoam/allure-example";
+    private static final String REPOSITORY = "Olga9017/qa_allure";
     private static final int ISSUE = 1;
 
     @Test
@@ -31,11 +31,11 @@ public class StepTest {
             $("#query-builder-test").sendKeys(REPOSITORY);
             $("#query-builder-test").submit();
         });
-//        step("Кликаем по ссылке репозитория" + REPOSITORY, () -> {
-//            $(linkText(REPOSITORY));
-//        });
+        step("Кликаем по ссылке репозитория" + REPOSITORY, () -> {
+            $(linkText(REPOSITORY)).click();
+        });
         step("Открыываем Issues", () -> {
-            $("#_r_6_").click();
+            $("#issues-tab").click();
         });
         step("Проверяем наличие Issue с номером" + ISSUE, () -> {
         $(withText("#" + ISSUE)).should(Condition.exist);
@@ -49,7 +49,7 @@ public class StepTest {
 
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
-//        steps.clickRepositoryLink(REPOSITORY);
+        steps.clickRepositoryLink(REPOSITORY);
         steps.openIssuesTab();
         steps.shouldSeeIssueWithNumber(ISSUE);
     }
