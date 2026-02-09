@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3811","testLambdaStep()","","Mon Feb 09 14:27:20 UTC 2026","passed","Mon Feb 09 14:27:24 UTC 2026","","qa_allure.StepTest","qa_allure.StepTest","testLambdaStep"
+"","2","Создание Issue для авторизированного пользователя","","Mon Feb 09 14:27:11 UTC 2026","passed","Mon Feb 09 14:27:11 UTC 2026","","qa_allure.LabelsTest","qa_allure.LabelsTest","testDynamicLabels"
+"","6282","testIssueSearch()","","Mon Feb 09 14:27:11 UTC 2026","passed","Mon Feb 09 14:27:17 UTC 2026","","qa_allure.SelenideTest","qa_allure.SelenideTest","testIssueSearch"
+"","1459","testAnnotatedAttachments()","","Mon Feb 09 14:27:09 UTC 2026","passed","Mon Feb 09 14:27:11 UTC 2026","","qa_allure.AttachmentsTest","qa_allure.AttachmentsTest","testAnnotatedAttachments"
+"","3621","testLambdaAttachments()","","Mon Feb 09 14:27:06 UTC 2026","passed","Mon Feb 09 14:27:09 UTC 2026","","qa_allure.AttachmentsTest","qa_allure.AttachmentsTest","testLambdaAttachments"
+"","2673","testAnnotatedStep()","","Mon Feb 09 14:27:17 UTC 2026","passed","Mon Feb 09 14:27:20 UTC 2026","","qa_allure.StepTest","qa_allure.StepTest","testAnnotatedStep"
+"","2","Создание Issue для авторизированного пользователя","","Mon Feb 09 14:27:11 UTC 2026","passed","Mon Feb 09 14:27:11 UTC 2026","","qa_allure.LabelsTest","qa_allure.LabelsTest","testStaticLabels"
